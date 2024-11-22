@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { computed, reactive, ref } from "vue";
+import { computed, onMounted, onUnmounted, reactive, ref } from "vue";
 import { useDisplay, useTheme } from "vuetify";
 
 const { xs } = useDisplay();
@@ -8,6 +8,8 @@ const theme = useTheme();
 const search = ref("");
 const order = ref("desc");
 const itemsPerPage = 0;
+
+const windowHeight = ref(window.innerHeight);
 
 const colors = reactive({
   youtube: '#C4302B',
@@ -323,22 +325,48 @@ const getSeasonColor = (season: string) => {
   return seasons.value.find((s) => s.value === season)?.color;
 };
 
+const height = computed(() => {
+  const toolbarHeight = 64;
+  const containerPadding = !xs.value ? 32 : 0;
+  const borderMaring = 2;
+
+  return windowHeight.value - toolbarHeight - containerPadding - borderMaring;
+});
+
+function handleResize() {
+  windowHeight.value = window.innerHeight;
+}
+
+onMounted(() => {
+  window.addEventListener("resize", handleResize);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("resize", handleResize);
+});
+
 </script>
 
 <template>
-  <v-container fluid>
+  <v-container
+    fluid
+    :class="xs ? 'pa-0' : ''"
+  >
     <v-data-iterator
       v-model:page="dataIteratorPage"
       :items="getItemsBySeason" 
       :items-per-page="itemsPerPage"
       :search="search"
       class="border"
-      style="border-top-left-radius: 9px;border-top-right-radius: 9px;"
+      :style="xs ? '' : 'border-top-left-radius: 9px;border-top-right-radius: 9px;'"
       :filter-keys="['title', 'subtitle']"
     >
       <template #header>
         <v-toolbar
-          class="px-2 rounded-t-lg"
+          class="px-2"
+          :class="{
+            'rounded-t-lg': !xs,
+          }"
         >
           <v-select
             v-if="!xs"
@@ -429,7 +457,10 @@ const getSeasonColor = (season: string) => {
 
       <template #default="{ items }">
         <v-container
-          style="max-height: 85vh; overflow: auto;"
+          :style="{
+            height: `${height}px`,
+            overflow: 'auto',
+          }"
           class="pa-1"
           fluid
         >
