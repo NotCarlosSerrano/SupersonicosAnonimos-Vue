@@ -11,7 +11,7 @@ import 'vuetify/styles'
 // Composables
 import { createVuetify } from 'vuetify'
 
-import { aliases, fa,  } from 'vuetify/iconsets/fa'
+import { aliases, fa } from 'vuetify/iconsets/fa'
 
 // Get browser preference for dark mode
 const darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
