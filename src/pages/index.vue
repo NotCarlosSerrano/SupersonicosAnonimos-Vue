@@ -21,21 +21,23 @@ const selectedSeason = ref({
 
 const seasons = ref([
   {
-    title: 'Temporada 1',
-    value: 'season1',
+    title: 'Todas',
+    value: 'all',
   },
   {
     title: 'Temporada 2',
     value: 'season2',
+    color: 'secondary',
   },
   {
-    title: 'Todas',
-    value: 'all',
-  }
+    title: 'Temporada 1',
+    value: 'season1',
+    color: 'indigo',
+  },
 ])
 
-const youtubeChannelUrl = "https://www.youtube.com/@SupersonicosAnonimos";
-const spotifyShowUrl = "https://open.spotify.com/show/76NUU3guvpmVDpOXD8NwPL";
+const youtubeUrl = "https://www.youtube.com/@SupersonicosAnonimos";
+const spotifyUrl = "https://open.spotify.com/show/76NUU3guvpmVDpOXD8NwPL";
 const instagramUrl = "https://www.instagram.com/supersonicosanonimos/";
 const tiktokUrl = "https://www.tiktok.com/@supersonicosanonimos";
 const xURL = "https://x.com/Supersonicos_A"
@@ -317,6 +319,10 @@ const getSeasonTitle = (season: string) => {
   return seasons.value.find((s) => s.value === season)?.title;
 };
 
+const getSeasonColor = (season: string) => {
+  return seasons.value.find((s) => s.value === season)?.color;
+};
+
 </script>
 
 <template>
@@ -335,6 +341,7 @@ const getSeasonTitle = (season: string) => {
           class="px-2 rounded-t-lg"
         >
           <v-select
+            v-if="!xs"
             v-model="selectedSeason"
             label="Temporadas"
             :items="seasons"
@@ -360,60 +367,61 @@ const getSeasonTitle = (season: string) => {
           />
           <!-- Order button -->
           <v-btn
+            :size="xs ? 'small' : 'default'"
             class="ml-1"
             :text="order === 'asc' ? 'Más antiguos' : 'Más recientes'"
             @click="changeOrder"
           />
           <v-spacer />
           <v-btn
-            size="48"
+            :size="xs ? 40 : 48"
             icon="fa:fab fa-x-twitter"
             :href="xURL"
             target="_blank"
           >
             <v-icon
-              size="28"
+              :size="xs ? 20 : 28"
             />
           </v-btn>
           <v-btn
-            size="48"
+            :size="xs ? 40 : 48"
             icon="fa:fab fa-spotify"
-            :href="spotifyShowUrl"
+            :href="spotifyUrl"
             target="_blank"
           >
             <v-icon
-              size="28"
+              :size="xs ? 20 : 28"
             />
           </v-btn>
           <v-btn
-            size="48"
+            :size="xs ? 40 : 48"
             icon="fa:fab fa-youtube"
-            :href="youtubeChannelUrl"
+            :href="youtubeUrl"
             target="_blank"
           >
             <v-icon
-              size="28"
+              :size="xs ? 20 : 28"
             />
           </v-btn>
           <v-btn
-            size="48"
+            :size="xs ? 40 : 48"
             icon="fa:fab fa-instagram"
             :href="instagramUrl"
             target="_blank"
             class="gradient"
           >
             <v-icon
-              size="28"
+              :size="xs ? 20 : 28"
             />
           </v-btn>
           <v-btn
-            size="48"
+            :size="xs ? 40 : 48"
             icon="fa:fab fa-tiktok"
             :href="tiktokUrl"
             target="_blank"
           >
             <v-icon
-              size="28"
+              :size="xs ? 20 : 28"
             />
           </v-btn>
         </v-toolbar>
@@ -451,7 +459,7 @@ const getSeasonTitle = (season: string) => {
                     <v-chip
                       v-if="selectedSeason.value === 'all'"
                       class="ma-2"
-                      color="secondary"
+                      :color="getSeasonColor(item.raw.season)"
                       variant="flat"
                       :text="getSeasonTitle(item.raw.season)"
                       style="user-select: none;"
