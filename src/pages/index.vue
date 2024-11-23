@@ -409,7 +409,7 @@ onUnmounted(() => {
           <v-btn
             v-else
             :size="40"
-            :icon="order === 'asc' ? 'fa:fas fa-arrow-down-1-9' : 'fa:fas fa-arrow-up-1-9'"
+            :icon="order === 'asc' ? 'fa:fas fa-arrow-down-1-9' : 'fa:fas fa-arrow-down-9-1'"
             :text="order === 'asc' ? 'Más antiguos' : 'Más recientes'"
             @click="changeOrder"
           >
