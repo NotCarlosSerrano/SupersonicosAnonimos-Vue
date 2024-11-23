@@ -392,7 +392,6 @@ onUnmounted(() => {
           <v-text-field
             v-model="search"
             :density="xs ? 'compact' : 'comfortable'"
-            prepend-inner-icon="mdi-magnify"
             placeholder="Buscar"
             variant="solo"
             clearable
