@@ -382,24 +382,33 @@ onUnmounted(() => {
             return-object
           />
           <v-text-field
-            v-if="!xs"
             v-model="search"
-            density="comfortable"
-            placeholder="Buscar..."
+            :density="xs ? 'compact' : 'comfortable'"
             prepend-inner-icon="mdi-magnify"
-            max-width="300px"
+            placeholder="Buscar"
             variant="solo"
             clearable
             hide-details
             clear-icon="mdi-close-circle"
+            class="mr-1 px-1"
           />
           <!-- Order button -->
           <v-btn
-            :size="xs ? 'small' : 'default'"
-            class="ml-1"
+            v-if="!xs"
             :text="order === 'asc' ? 'Más antiguos' : 'Más recientes'"
             @click="changeOrder"
           />
+          <v-btn
+            v-else
+            :size="40"
+            :icon="order === 'asc' ? 'fa:fas fa-arrow-down-1-9' : 'fa:fas fa-arrow-up-1-9'"
+            :text="order === 'asc' ? 'Más antiguos' : 'Más recientes'"
+            @click="changeOrder"
+          >
+            <v-icon
+              :size="xs ? 20 : 28"
+            />
+          </v-btn>
           <v-spacer />
           <v-btn
             :size="xs ? 40 : 48"
