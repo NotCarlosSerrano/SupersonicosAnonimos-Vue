@@ -333,6 +333,14 @@ const height = computed(() => {
   return windowHeight.value - toolbarHeight - containerPadding - borderMaring;
 });
 
+const buttonSize = computed(() => {
+  return xs.value ? 40 : 48;
+});
+
+const buttonIconSize = computed(() => {
+  return xs.value ? 20 : 28;
+});
+
 function handleResize() {
   windowHeight.value = window.innerHeight;
 }
@@ -389,6 +397,7 @@ onUnmounted(() => {
             variant="solo"
             clearable
             hide-details
+            max-width="300px"
             clear-icon="mdi-close-circle"
             class="mr-1 px-1"
           />
@@ -406,59 +415,59 @@ onUnmounted(() => {
             @click="changeOrder"
           >
             <v-icon
-              :size="xs ? 20 : 28"
+              :size="buttonIconSize"
             />
           </v-btn>
           <v-spacer />
           <v-btn
-            :size="xs ? 40 : 48"
+            :size="buttonSize"
             icon="fa:fab fa-x-twitter"
             :href="xURL"
             target="_blank"
           >
             <v-icon
-              :size="xs ? 20 : 28"
+              :size="buttonIconSize"
             />
           </v-btn>
           <v-btn
-            :size="xs ? 40 : 48"
+            :size="buttonSize"
             icon="fa:fab fa-spotify"
             :href="spotifyUrl"
             target="_blank"
           >
             <v-icon
-              :size="xs ? 20 : 28"
+              :size="buttonIconSize"
             />
           </v-btn>
           <v-btn
-            :size="xs ? 40 : 48"
+            :size="buttonSize"
             icon="fa:fab fa-youtube"
             :href="youtubeUrl"
             target="_blank"
           >
             <v-icon
-              :size="xs ? 20 : 28"
+              :size="buttonIconSize"
             />
           </v-btn>
           <v-btn
-            :size="xs ? 40 : 48"
+            :size="buttonSize"
             icon="fa:fab fa-instagram"
             :href="instagramUrl"
             target="_blank"
             class="gradient"
           >
             <v-icon
-              :size="xs ? 20 : 28"
+              :size="buttonIconSize"
             />
           </v-btn>
           <v-btn
-            :size="xs ? 40 : 48"
+            :size="buttonSize"
             icon="fa:fab fa-tiktok"
             :href="tiktokUrl"
             target="_blank"
           >
             <v-icon
-              :size="xs ? 20 : 28"
+              :size="buttonIconSize"
             />
           </v-btn>
         </v-toolbar>
