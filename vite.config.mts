@@ -58,5 +58,5 @@ export default defineConfig({
       },
     },
   },
-  base: '/SupersonicosAnonimos-Vue/',
+  base: './',
 })
