@@ -4,7 +4,7 @@ import { computed, onMounted, onUnmounted, ref } from "vue";
 import { useDisplay } from "vuetify";
 import type { Episode, Season, Social } from "@/interfaces/interfaces";
 
-const { xs } = useDisplay();
+const { mobile } = useDisplay();
 
 const search = ref("");
 const order = ref("desc");
@@ -321,7 +321,7 @@ const getItemsBySeason = computed(() => {
 
 const height = computed(() => {
   const toolbarHeight = 64;
-  const containerPadding = !xs.value ? 32 : 0;
+  const containerPadding = !mobile.value ? 32 : 0;
   const borderMaring = 2;
   const footer = 40;
 
@@ -329,7 +329,7 @@ const height = computed(() => {
 });
 
 const buttonIconSize = computed(() => {
-  return xs.value ? 20 : 28;
+  return mobile.value ? 20 : 28;
 });
 
 function handleResize() {
@@ -349,7 +349,7 @@ onUnmounted(() => {
 <template>
   <v-container
     fluid
-    :class="xs ? 'pa-0' : ''"
+    :class="mobile ? 'pa-0' : ''"
   >
     <v-data-iterator
       v-model:page="dataIteratorPage"
@@ -357,18 +357,18 @@ onUnmounted(() => {
       :items-per-page="itemsPerPage"
       :search="search"
       class="border"
-      :style="xs ? '' : 'border-top-left-radius: 9px;border-top-right-radius: 9px;'"
+      :style="mobile ? '' : 'border-top-left-radius: 9px;border-top-right-radius: 9px;'"
       :filter-keys="['title', 'subtitle']"
     >
       <template #header>
         <v-toolbar
           class="px-2"
           :class="{
-            'rounded-t-lg': !xs,
+            'rounded-t-lg': !mobile,
           }"
         >
           <v-select
-            v-if="!xs"
+            v-if="!mobile"
             v-model="selectedSeason"
             label="Temporadas"
             :items="seasons"
@@ -382,7 +382,7 @@ onUnmounted(() => {
           />
           <v-text-field
             v-model="search"
-            :density="xs ? 'compact' : 'comfortable'"
+            :density="mobile ? 'compact' : 'comfortable'"
             placeholder="Buscar"
             variant="solo"
             clearable
@@ -393,7 +393,7 @@ onUnmounted(() => {
           />
           <!-- Order button -->
           <v-btn
-            v-if="!xs"
+            v-if="!mobile"
             :text="order === 'asc' ? 'Más antiguos' : 'Más recientes'"
             @click="changeOrder"
           />

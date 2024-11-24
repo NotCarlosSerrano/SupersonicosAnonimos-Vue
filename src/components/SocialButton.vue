@@ -1,8 +1,8 @@
-<script setup lang=ts>
+<script setup lang="ts">
 import { computed } from 'vue';
 import { useDisplay } from 'vuetify';
 
-const { xs } = useDisplay();
+const { mobile } = useDisplay();
 
 defineProps({
   socialUrl: {
@@ -16,11 +16,11 @@ defineProps({
 })
 
 const buttonIconSize = computed(() => {
-  return xs.value ? 20 : 28;
+  return mobile.value ? 20 : 28;
 });
 
 const buttonSize = computed(() => {
-  return xs.value ? 40 : 48;
+  return mobile.value ? 40 : 48;
 });
 
 </script>
