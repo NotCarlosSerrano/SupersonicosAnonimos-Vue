@@ -1,9 +1,10 @@
 <script lang="ts" setup>
-import { computed, onMounted, onUnmounted, reactive, ref } from "vue";
-import { useDisplay, useTheme } from "vuetify";
+import EpisodeCard from "@/components/EpisodeCard.vue";
+import { computed, onMounted, onUnmounted, ref } from "vue";
+import { useDisplay } from "vuetify";
+import type { Episode, Season } from "@/interfaces/interfaces";
 
 const { xs } = useDisplay();
-const theme = useTheme();
 
 const search = ref("");
 const order = ref("desc");
@@ -11,17 +12,13 @@ const itemsPerPage = 0;
 
 const windowHeight = ref(window.innerHeight);
 
-const colors = reactive({
-  youtube: '#C4302B',
-  spotify: '#1DB954',
-})
-
 const selectedSeason = ref({
   title: 'Todas',
   value: 'all',
+  color: 'primary',
 });
 
-const seasons = ref([
+const seasons = ref<Season[]>([
   {
     title: 'Todas',
     value: 'all',
@@ -38,13 +35,30 @@ const seasons = ref([
   },
 ])
 
-const youtubeUrl = "https://www.youtube.com/@SupersonicosAnonimos";
-const spotifyUrl = "https://open.spotify.com/show/76NUU3guvpmVDpOXD8NwPL";
-const instagramUrl = "https://www.instagram.com/supersonicosanonimos/";
-const tiktokUrl = "https://www.tiktok.com/@supersonicosanonimos";
-const xURL = "https://x.com/Supersonicos_A"
+const socials = ref([
+  {
+    icon: 'fa:fab fa-x-twitter',
+    url: 'https://twitter.com/Supersonicos_A',
+  },
+  {
+    icon: 'fa:fab fa-youtube',
+    url: 'https://www.youtube.com/@SupersonicosAnonimos',
+  },
+  {
+    icon: 'fa:fab fa-spotify',
+    url: 'https://open.spotify.com/show/76NUU3guvpmVDpOXD8NwPL',
+  },
+  {
+    icon: 'fa:fab fa-instagram',
+    url: 'https://www.instagram.com/supersonicosanonimos/',
+  },
+  {
+    icon: 'fa:fab fa-tiktok',
+    url: 'https://www.tiktok.com/@supersonicosanonimos',
+  },
+]);
 
-const links = ref([
+const links = ref<Episode[]>([
   {
     youtubeVideoId: "Z_sFJ3slwtw",
     spotifyEpisodeId: "4QV3C42b2XIq10bul74mUt",
@@ -280,18 +294,6 @@ const links = ref([
   },
 ]);
 
-const getThumbnail = (youtubeVideoId: string) => {
-  return `https://img.youtube.com/vi/${youtubeVideoId}/maxresdefault.jpg`;
-};
-
-const getYoutubeUrl = (youtubeVideoId: string) => {
-  return `https://www.youtube.com/watch?v=${youtubeVideoId}`;
-};
-
-const getSpotifyUrl = (spotifyEpisodeId: string | null) => {
-  return `https://open.spotify.com/episode/${spotifyEpisodeId}`;
-};
-
 const orderedLinks = computed(() => {
   if (order.value === "asc") {
     return links.value;
@@ -317,24 +319,13 @@ const getItemsBySeason = computed(() => {
   });
 });
 
-const getSeasonTitle = (season: string) => {
-  return seasons.value.find((s) => s.value === season)?.title;
-};
-
-const getSeasonColor = (season: string) => {
-  return seasons.value.find((s) => s.value === season)?.color;
-};
-
 const height = computed(() => {
   const toolbarHeight = 64;
   const containerPadding = !xs.value ? 32 : 0;
   const borderMaring = 2;
+  const footer = 40;
 
-  return windowHeight.value - toolbarHeight - containerPadding - borderMaring;
-});
-
-const buttonSize = computed(() => {
-  return xs.value ? 40 : 48;
+  return windowHeight.value - toolbarHeight - containerPadding - borderMaring - footer;
 });
 
 const buttonIconSize = computed(() => {
@@ -418,57 +409,12 @@ onUnmounted(() => {
             />
           </v-btn>
           <v-spacer />
-          <v-btn
-            :size="buttonSize"
-            icon="fa:fab fa-x-twitter"
-            :href="xURL"
-            target="_blank"
-          >
-            <v-icon
-              :size="buttonIconSize"
-            />
-          </v-btn>
-          <v-btn
-            :size="buttonSize"
-            icon="fa:fab fa-spotify"
-            :href="spotifyUrl"
-            target="_blank"
-          >
-            <v-icon
-              :size="buttonIconSize"
-            />
-          </v-btn>
-          <v-btn
-            :size="buttonSize"
-            icon="fa:fab fa-youtube"
-            :href="youtubeUrl"
-            target="_blank"
-          >
-            <v-icon
-              :size="buttonIconSize"
-            />
-          </v-btn>
-          <v-btn
-            :size="buttonSize"
-            icon="fa:fab fa-instagram"
-            :href="instagramUrl"
-            target="_blank"
-            class="gradient"
-          >
-            <v-icon
-              :size="buttonIconSize"
-            />
-          </v-btn>
-          <v-btn
-            :size="buttonSize"
-            icon="fa:fab fa-tiktok"
-            :href="tiktokUrl"
-            target="_blank"
-          >
-            <v-icon
-              :size="buttonIconSize"
-            />
-          </v-btn>
+          <SocialButton
+            v-for="(social, index) in socials"
+            :key="index"
+            :icon="social.icon"
+            :social-url="social.url"
+          />
         </v-toolbar>
       </template>
 
@@ -493,156 +439,26 @@ onUnmounted(() => {
               lg="3"
               xl="2"
             >
-              <v-card
-                class="pb-1 rounded-xl"
-                border
-                flat
-              >
-                <v-img
-                  :src="getThumbnail(item.raw.youtubeVideoId)"
-                >
-                  <template
-                    #default
-                  >
-                    <v-chip
-                      v-if="selectedSeason.value === 'all'"
-                      class="ma-2"
-                      :color="getSeasonColor(item.raw.season)"
-                      variant="flat"
-                      :text="getSeasonTitle(item.raw.season)"
-                      style="user-select: none;"
-                    />
-                  </template>
-                </v-img>
-
-                <v-list-item>
-                  <template #subtitle>
-                    <div class="text-caption">
-                      Con
-                      <a
-                        :href="item.raw.subtitleUrl"
-                        target="_blank"
-                      >{{ item.raw.subtitle }}</a>
-                      <span>
-                        {{ 
-                          item.raw.subtitle ? ', ' : ''
-                        }}
-                      </span>
-                      <a
-                        href="https://x.com/SergioHidalAERO"
-                        target="_blank"
-                      >Sergio</a>
-                      <span>
-                        y
-                      </span>
-                      <a
-                        href="https://x.com/ControlMision"
-                        target="_blank"
-                      >Josep</a>
-                    </div>
-                  </template>
-                  <template #title>
-                    <strong
-                      v-tooltip="{
-                        text: item.raw.title,
-                        openOnHover: true,
-                        location: 'bottom',
-                        openDelay: 250,
-                      }"
-                      class="text-subtitle-2"
-                    >
-                      {{ item.raw.title }}
-                    </strong>
-                  </template>
-                </v-list-item>
-
-                <div class="d-flex justify-space-between px-4">
-                  <div
-                    class="d-flex align-center text-caption text-medium-emphasis me-1"
-                  >
-                    <v-icon
-                      icon="mdi-clock"
-                      start
-                    />
-
-                    <div class="text-truncate">
-                      {{ item.raw.duration }}
-                    </div>
-                  </div>
-
-                  <div>
-                    <v-btn
-                      :disabled="!item.raw.youtubeVideoId"
-                      icon="fa:fab fa-youtube"
-                      :href="getYoutubeUrl(item.raw.youtubeVideoId)"
-                      target="_blank"
-                      class="mr-1"
-                      variant="text"
-                      :color="theme.current.value.dark ? undefined : colors.youtube"
-                    />
-                    <v-btn
-                      :disabled="!item.raw.spotifyEpisodeId"
-                      icon="fa:fab fa-spotify"
-                      :href="getSpotifyUrl(item.raw.spotifyEpisodeId)"
-                      target="_blank"
-                      class="mr-1"
-                      variant="text"
-                      :color="theme.current.value.dark ? undefined : colors.spotify"
-                    />
-                    <v-btn
-                      :disabled="!item.raw.xVideoUrl"
-                      icon="fa:fab fa-x-twitter"
-                      :href="item.raw.xVideoUrl"
-                      target="_blank"
-                      class="mr-1"
-                      variant="text"
-                    />
-                    <!-- <v-btn
-                      class="text-none"
-                      size="small"
-                      text="Read"
-                      border
-                      flat
-                      @click="() => {}"
-                    /> -->
-                  </div>
-                </div>
-              </v-card>
+              <EpisodeCard
+                :episode="item.raw"
+                :selected-season="selectedSeason"
+                :seasons="seasons"
+              />
             </v-col>
           </v-row>
         </v-container>
       </template>
-
-      <template
-        #footer="{ page, pageCount, prevPage, nextPage }"
-      >
-        <div
-          v-if="itemsPerPage > 0"
-          class="d-flex align-center justify-center pa-4"
-        >
-          <v-btn
-            :disabled="page === 1"
-            density="comfortable"
-            icon="mdi-arrow-left"
-            variant="tonal"
-            rounded
-            @click="prevPage"
-          />
-
-          <div class="mx-2 text-caption">
-            Página {{ page }} de {{ pageCount }}
-          </div>
-
-          <v-btn
-            :disabled="page >= pageCount"
-            density="comfortable"
-            icon="mdi-arrow-right"
-            variant="tonal"
-            rounded
-            @click="nextPage"
-          />
-        </div>
-      </template>
     </v-data-iterator>
+    <v-footer>
+      <span>
+        Hecho con ❤️ por
+        <a
+          href="https://github.com/NotCarlosSerrano"
+          target="_blank"
+        >
+          NotCarlosSerrano
+        </a>
+      </span>
+    </v-footer>
   </v-container>
 </template>

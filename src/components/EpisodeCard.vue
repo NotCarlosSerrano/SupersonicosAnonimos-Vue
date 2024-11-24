@@ -1,0 +1,165 @@
+<script setup lang="ts">
+import { reactive } from 'vue';
+import { useTheme } from 'vuetify';
+import type { Episode, Season } from '@/interfaces/interfaces';
+
+const theme = useTheme();
+
+const props = defineProps({
+  episode: {
+    type: Object as () => Episode,
+    required: true,
+  },
+  selectedSeason: {
+    type: Object as () => Season,
+    required: true,
+  },
+  seasons: {
+    type: Array as () => Season[],
+    required: true,
+  },
+});
+
+const colors = reactive({
+  youtube: '#C4302B',
+  spotify: '#1DB954',
+})
+
+const getSeasonTitle = (season: string) => {
+  return props.seasons.find((s) => s.value === season)?.title;
+};
+
+const getSeasonColor = (season: string) => {
+  return props.seasons.find((s) => s.value === season)?.color;
+};
+
+const getThumbnail = (youtubeVideoId: string) => {
+  return `https://img.youtube.com/vi/${youtubeVideoId}/maxresdefault.jpg`;
+};
+
+const getYoutubeUrl = (youtubeVideoId: string) => {
+  return `https://www.youtube.com/watch?v=${youtubeVideoId}`;
+};
+
+const getSpotifyUrl = (spotifyEpisodeId: string | null) => {
+  return `https://open.spotify.com/episode/${spotifyEpisodeId}`;
+};
+</script>
+
+<template>
+  <v-card
+    class="pb-1 rounded-xl"
+    border
+    flat
+  >
+    <v-img
+      :src="getThumbnail(episode.youtubeVideoId)"
+    >
+      <template
+        #default
+      >
+        <v-chip
+          v-if="selectedSeason.value === 'all'"
+          class="ma-2"
+          :color="getSeasonColor(episode.season)"
+          variant="flat"
+          :text="getSeasonTitle(episode.season)"
+          style="user-select: none;"
+        />
+      </template>
+    </v-img>
+
+    <v-list-item>
+      <template #subtitle>
+        <div class="text-caption">
+          Con
+          <a
+            :href="episode.subtitleUrl"
+            target="_blank"
+          >{{ episode.subtitle }}</a>
+          <span>
+            {{ 
+              episode.subtitle ? ', ' : ''
+            }}
+          </span>
+          <a
+            href="https://x.com/SergioHidalAERO"
+            target="_blank"
+          >Sergio</a>
+          <span>
+            y
+          </span>
+          <a
+            href="https://x.com/ControlMision"
+            target="_blank"
+          >Josep</a>
+        </div>
+      </template>
+      <template #title>
+        <strong
+          v-tooltip="{
+            text: episode.title,
+            openOnHover: true,
+            location: 'bottom',
+            openDelay: 250,
+          }"
+          class="text-subtitle-2"
+        >
+          {{ episode.title }}
+        </strong>
+      </template>
+    </v-list-item>
+
+    <div class="d-flex justify-space-between px-4">
+      <div
+        class="d-flex align-center text-caption text-medium-emphasis me-1"
+      >
+        <v-icon
+          icon="mdi-clock"
+          start
+        />
+
+        <div class="text-truncate">
+          {{ episode.duration }}
+        </div>
+      </div>
+
+      <div>
+        <v-btn
+          :disabled="!episode.youtubeVideoId"
+          icon="fa:fab fa-youtube"
+          :href="getYoutubeUrl(episode.youtubeVideoId)"
+          target="_blank"
+          class="mr-1"
+          variant="text"
+          :color="theme.current.value.dark ? undefined : colors.youtube"
+        />
+        <v-btn
+          :disabled="!episode.spotifyEpisodeId"
+          icon="fa:fab fa-spotify"
+          :href="getSpotifyUrl(episode.spotifyEpisodeId)"
+          target="_blank"
+          class="mr-1"
+          variant="text"
+          :color="theme.current.value.dark ? undefined : colors.spotify"
+        />
+        <v-btn
+          :disabled="!episode.xVideoUrl"
+          icon="fa:fab fa-x-twitter"
+          :href="episode.xVideoUrl"
+          target="_blank"
+          class="mr-1"
+          variant="text"
+        />
+        <!-- <v-btn
+          class="text-none"
+          size="small"
+          text="Read"
+          border
+          flat
+          @click="() => {}"
+        /> -->
+      </div>
+    </div>
+  </v-card>
+</template>
