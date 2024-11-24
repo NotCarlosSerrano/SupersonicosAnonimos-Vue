@@ -8,6 +8,7 @@ interface Episode {
   subtitleUrl?: string;
   xVideoUrl?: string;
   releaseDate?: Date;
+  keywords?: string;
 }
 
 interface Season {

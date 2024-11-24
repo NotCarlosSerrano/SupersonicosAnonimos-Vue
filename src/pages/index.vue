@@ -65,6 +65,7 @@ const links = ref<Episode[]>([
     title: "Capítulo 1: El del avión secreto del Pentágono",
     duration: "1:02:49",
     season: "season1",
+    keywords: "temporada 1, temporada1"
   },
   {
     youtubeVideoId: "Jvfh1x_swMU",
@@ -72,6 +73,7 @@ const links = ref<Episode[]>([
     title: "Capítulo 2: El del accidente de avión en Tokio",
     duration: "1:00:00",
     season: "season1",
+    keywords: "temporada 1, temporada1"
   },
   {
     youtubeVideoId: "nQXIoMZYL6I",
@@ -79,6 +81,7 @@ const links = ref<Episode[]>([
     title: "Capítulo 3: El de la semana loca aeroespacial",
     duration: "1:02:16",
     season: "season1",
+    keywords: "temporada 1, temporada1"
   },
   {
     youtubeVideoId: "0T00ZwqYROo",
@@ -88,6 +91,7 @@ const links = ref<Episode[]>([
     subtitleUrl: "https://x.com/fugastronautica",
     duration: "58:56",
     season: "season1",
+    keywords: "temporada 1, temporada1"
   },
   {
     youtubeVideoId: "ryHUipXzWgw",
@@ -95,6 +99,7 @@ const links = ref<Episode[]>([
     title: "Capitulo 5: El del adiós a Ingenuity y el hola a SLIM",
     duration: "1:06:26",
     season: "season1",
+    keywords: "temporada 1, temporada1"
   },
   {
     youtubeVideoId: "tEOq5ZmWyIU",
@@ -102,6 +107,7 @@ const links = ref<Episode[]>([
     title: "Capitulo 6: Se calienta la cosa en Starbase",
     duration: "1:20:29",
     season: "season1",
+    keywords: "temporada 1, temporada1"
   },
   {
     youtubeVideoId: "RFrEBZcAx8c",
@@ -111,6 +117,7 @@ const links = ref<Episode[]>([
     subtitleUrl: "https://x.com/doctorfision",
     duration: "57:30",
     season: "season1",
+    keywords: "temporada 1, temporada1"
   },
   {
     youtubeVideoId: "csrMZAsCEq8",
@@ -120,6 +127,7 @@ const links = ref<Episode[]>([
     subtitleUrl: "https://x.com/Eurekablog",
     duration: "1:24:34",
     season: "season1",
+    keywords: "temporada 1, temporada1"
   },
   {
     youtubeVideoId: "yQbFgZGb-dA",
@@ -127,6 +135,7 @@ const links = ref<Episode[]>([
     title: "Capitulo 9: Starship, vuelos supersónicos y la vuelta a la Luna",
     duration: "1:02:19",
     season: "season1",
+    keywords: "temporada 1, temporada1"
   },
   {
     youtubeVideoId: "bi3wnk2Y2lY",
@@ -134,6 +143,7 @@ const links = ref<Episode[]>([
     title: "Capitulo 10: Te subirías en el Primer Starship Tripulado?",
     duration: "1:07:15",
     season: "season1",
+    keywords: "temporada 1, temporada1"
   },
   {
     youtubeVideoId: "BBdS1Lw5594",
@@ -141,6 +151,7 @@ const links = ref<Episode[]>([
     title: "Capitulo 11: Especial Lanzamiento de Starship IFT-3",
     duration: "1:12:36",
     season: "season1",
+    keywords: "temporada 1, temporada1"
   },
   {
     youtubeVideoId: "fD_shwAgbNs",
@@ -148,6 +159,7 @@ const links = ref<Episode[]>([
     title: "Capitulo 12: ¿Éxito o fracaso de Starship?",
     duration: "1:15:24",
     season: "season1",
+    keywords: "temporada 1, temporada1"
   },
   {
     youtubeVideoId: "Gv7lAuLBteQ",
@@ -155,6 +167,7 @@ const links = ref<Episode[]>([
     title: "Capítulo 13: Cómo escapar de un cohete Soyuz en llamas",
     duration: "56:25",
     season: "season1",
+    keywords: "temporada 1, temporada1"
   },
   {
     youtubeVideoId: "y7Mql3KrzDA",
@@ -162,6 +175,7 @@ const links = ref<Episode[]>([
     title: "Capítulo 14: La Pólvora Negra y la búsqueda de la inmortalidad",
     duration: "1:33:32",
     season: "season1",
+    keywords: "temporada 1, temporada1"
   },
   {
     youtubeVideoId: "W3E_llroUIY",
@@ -169,6 +183,7 @@ const links = ref<Episode[]>([
     title: "Capítulo 15: Desmontando Terraplanistas",
     duration: "1:19:47",
     season: "season1",
+    keywords: "temporada 1, temporada1"
   },
   {
     youtubeVideoId: "UAuShXH3FIA",
@@ -176,6 +191,7 @@ const links = ref<Episode[]>([
     spotifyEpisodeId: "3eSqLNbEdFYfjwoi8snUdW",
     duration: "1:00:13",
     season: "season1",
+    keywords: "temporada 1, temporada1"
   },
   {
     youtubeVideoId: "oJUjim6CkG4",
@@ -183,6 +199,7 @@ const links = ref<Episode[]>([
     title: "Capítulo 17: Josep sobrevive a un B-737 Max SIN SABERLO",
     duration: "1:16:26",
     season: "season1",
+    keywords: "temporada 1, temporada1"
   },
   {
     youtubeVideoId: "p_NfDTViF6c",
@@ -190,6 +207,7 @@ const links = ref<Episode[]>([
     title: "Capítulo 18: SpaceX presenta sus nuevos trajes y BOEING lo vuelve a hacer",
     duration: "1:12:37",
     season: "season1",
+    keywords: "temporada 1, temporada1"
   },
   {
     youtubeVideoId: "ulvrg1aVn-Y",
@@ -197,6 +215,7 @@ const links = ref<Episode[]>([
     title: "Capítulo 19: Las nuevas mejoras de Starship y las Auroras Boreales",
     duration: "1:07:43",
     season: "season1",
+    keywords: "temporada 1, temporada1"
   },
   {
     youtubeVideoId: "IVGhTgKPGmo",
@@ -204,6 +223,7 @@ const links = ref<Episode[]>([
     title: "Consejos para Estudiantes y Carreras de Ciencias (y no tan ciencias)",
     duration: "2:00:38",
     season: "season1",
+    keywords: "temporada 1, temporada1"
   },
   {
     youtubeVideoId: "e5vksFewaAQ",
@@ -211,6 +231,7 @@ const links = ref<Episode[]>([
     title: "Capítulo 21: TODO lo que tienes que saber para el 4º Vuelo de Starship",
     duration: "54:32",
     season: "season1",
+    keywords: "temporada 1, temporada1"
   },
   {
     youtubeVideoId: "swh61M_Ibxg",
@@ -218,6 +239,7 @@ const links = ref<Episode[]>([
     title: "Capítulo 22: La locura de Starship y las nuevas informaciones de Elon Musk",
     duration: "1:07:06",
     season: "season1",
+    keywords: "temporada 1, temporada1"
   },
   { 
     youtubeVideoId: "9QfMmn4aDnI", 
@@ -225,6 +247,7 @@ const links = ref<Episode[]>([
     title: "Capítulo 23 / El definitivo",
     duration: "1:05:11",
     season: "season1",
+    keywords: "temporada 1, temporada1"
   },
   {
     youtubeVideoId: "kGns4HEGlms", 
@@ -232,6 +255,7 @@ const links = ref<Episode[]>([
     title: "Capítulo 24 | HEMOS VUELTO",
     duration: "1:13:46",
     season: "season2",
+    keywords: "temporada 2, temporada2"
   },
   {
     youtubeVideoId: "3QjDWMQehxg", 
@@ -239,6 +263,7 @@ const links = ref<Episode[]>([
     title: "Capítulo 25 | La casi catástrofe aérea del avión de Josep",
     duration: "1:01:39",
     season: "season2",
+    keywords: "temporada 2, temporada2"
   },
   {
     youtubeVideoId: "noggJKf9Mcc", 
@@ -246,6 +271,7 @@ const links = ref<Episode[]>([
     title: "Capítulo 26 | PLD nos cuenta en EXCLUSIVA sus proyectos!",
     duration: "1:10:00",
     season: "season2",
+    keywords: "temporada 2, temporada2"
   },
   {
     youtubeVideoId: "Ls-Om2iJtuc", 
@@ -253,6 +279,7 @@ const links = ref<Episode[]>([
     title: "Capítulo 27 | Histórico, Spacex atrapa un cohete gigantesco en el aire",
     duration: "1:05:10",
     season: "season2",
+    keywords: "temporada 2, temporada2"
   },
   {
     youtubeVideoId: "ydmEKfvZD0I", 
@@ -260,6 +287,7 @@ const links = ref<Episode[]>([
     title: "Capítulo 28 | La NASA cerca de encontrar vida Extraterrestre",
     duration: "1:10:22",
     season: "season2",
+    keywords: "temporada 2, temporada2"
   },
   {
     youtubeVideoId: "FPOSHUULFHY", 
@@ -267,6 +295,7 @@ const links = ref<Episode[]>([
     title: "Capítulo 29 | SpaceX secuestró focas para experimentar con ellas (Confirmado)",
     duration: "1:13:06",
     season: "season2",
+    keywords: "temporada 2, temporada2"
   },
   {
     youtubeVideoId: "CzxeHx6CX8I", 
@@ -275,6 +304,7 @@ const links = ref<Episode[]>([
     title: "Capítulo 30 | El Avión aniquilador Soviético y la Starship Lunar",
     duration: "1:21:25",
     season: "season2",
+    keywords: "temporada 2, temporada2"
   },
   {
     youtubeVideoId: "jDV6tKZgx0g", 
@@ -283,6 +313,7 @@ const links = ref<Episode[]>([
     title: "Capítulo 31 | Los planes de Elon Trump para ganar a China + Otro Lanzamiento Starship",
     duration: "1:20:05",
     season: "season2",
+    keywords: "temporada 2, temporada2"
   },
   {
     youtubeVideoId: "09DgU-zmKc4", 
@@ -291,6 +322,7 @@ const links = ref<Episode[]>([
     title: "Capítulo 32 | Elon Musk acabará con el SLS + Noticias de Starship",
     duration: "1:23:59",
     season: "season2",
+    keywords: "temporada 2, temporada2"
   },
 ]);
 
@@ -358,7 +390,7 @@ onUnmounted(() => {
       :search="search"
       class="border"
       :style="mobile ? '' : 'border-top-left-radius: 9px;border-top-right-radius: 9px;'"
-      :filter-keys="['title', 'subtitle']"
+      :filter-keys="['title', 'subtitle', 'keywords']"
     >
       <template #header>
         <v-toolbar
