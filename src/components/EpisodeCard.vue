@@ -44,6 +44,15 @@ const getYoutubeUrl = (youtubeVideoId: string) => {
 const getSpotifyUrl = (spotifyEpisodeId: string | null) => {
   return `https://open.spotify.com/episode/${spotifyEpisodeId}`;
 };
+
+const isNewEpisode = (releaseDate: Date) => {
+  const today = new Date();
+  const release = new Date(releaseDate);
+  const fiveDaysAgo = new Date(today.setDate(today.getDate() - 5));
+
+  return release > fiveDaysAgo;
+};
+
 </script>
 
 <template>
@@ -65,6 +74,14 @@ const getSpotifyUrl = (spotifyEpisodeId: string | null) => {
           variant="flat"
           :text="getSeasonTitle(episode.season)"
           style="user-select: none;"
+        />
+        <v-chip
+          v-if="episode.releaseDate && isNewEpisode(episode.releaseDate)"
+          class="ma-1 position-absolute bottom-0 right-0 rounded-lg"
+          color="orange-darken-2"
+          variant="flat"
+          text="¡Nuevo episodio!"
+          style="user-select: none; "
         />
       </template>
     </v-img>
