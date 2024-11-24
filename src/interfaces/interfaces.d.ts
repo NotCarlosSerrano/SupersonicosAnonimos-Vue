@@ -15,4 +15,9 @@ interface Season {
   color?: string;
 }
 
-export { Episode, Season };
+interface Social {
+  icon: string;
+  url: string;
+}
+
+export { Episode, Season, Social };

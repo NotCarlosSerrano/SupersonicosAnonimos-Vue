@@ -2,7 +2,7 @@
 import EpisodeCard from "@/components/EpisodeCard.vue";
 import { computed, onMounted, onUnmounted, ref } from "vue";
 import { useDisplay } from "vuetify";
-import type { Episode, Season } from "@/interfaces/interfaces";
+import type { Episode, Season, Social } from "@/interfaces/interfaces";
 
 const { xs } = useDisplay();
 
@@ -12,7 +12,7 @@ const itemsPerPage = 0;
 
 const windowHeight = ref(window.innerHeight);
 
-const selectedSeason = ref({
+const selectedSeason = ref<Season>({
   title: 'Todas',
   value: 'all',
   color: 'primary',
@@ -35,7 +35,7 @@ const seasons = ref<Season[]>([
   },
 ])
 
-const socials = ref([
+const socials = ref<Social[]>([
   {
     icon: 'fa:fab fa-x-twitter',
     url: 'https://twitter.com/Supersonicos_A',
@@ -401,7 +401,6 @@ onUnmounted(() => {
             v-else
             :size="40"
             :icon="order === 'asc' ? 'fa:fas fa-arrow-down-1-9' : 'fa:fas fa-arrow-down-9-1'"
-            :text="order === 'asc' ? 'Más antiguos' : 'Más recientes'"
             @click="changeOrder"
           >
             <v-icon
@@ -447,6 +446,16 @@ onUnmounted(() => {
             </v-col>
           </v-row>
         </v-container>
+      </template>
+      <template #no-data>
+        <v-empty-state
+          :style="{
+            height: `${height}px`,
+          }"
+          icon="mdi-magnify-remove-outline"
+          title="No hay episodios"
+          text="No se encontraron episodios con el filtro aplicado"
+        />
       </template>
     </v-data-iterator>
     <v-footer>
