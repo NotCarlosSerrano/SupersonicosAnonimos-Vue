@@ -69,19 +69,17 @@ const isNewEpisode = (releaseDate: Date) => {
       >
         <v-chip
           v-if="selectedSeason.value === 'all'"
-          class="ma-2"
+          class="ma-2 user-select-none"
           :color="getSeasonColor(episode.season)"
           variant="flat"
           :text="getSeasonTitle(episode.season)"
-          style="user-select: none;"
         />
         <v-chip
           v-if="episode.releaseDate && isNewEpisode(episode.releaseDate)"
-          class="ma-1 position-absolute bottom-0 right-0 rounded-lg"
+          class="ma-1 position-absolute bottom-0 right-0 rounded-lg user-select-none"
           color="orange-darken-2"
           variant="flat"
           text="¡Nuevo episodio!"
-          style="user-select: none; "
         />
       </template>
     </v-img>
@@ -180,3 +178,9 @@ const isNewEpisode = (releaseDate: Date) => {
     </div>
   </v-card>
 </template>
+
+<style scoped>
+.user-select-none {
+  user-select: none;
+}
+</style>
