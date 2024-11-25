@@ -91,13 +91,13 @@ const isNewEpisode = (releaseDate: Date) => {
         <div class="text-caption">
           Con
           <a
+            v-if="episode.subtitle"
             :href="episode.subtitleUrl"
             target="_blank"
           >{{ episode.subtitle }}</a>
-          <span>
-            {{ 
-              episode.subtitle ? ', ' : ''
-            }}
+          <span
+            v-if="episode.subtitle"
+          >,
           </span>
           <a
             href="https://x.com/SergioHidalAERO"
