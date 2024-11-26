@@ -263,6 +263,8 @@ const episodes: Episode[] = [
     spotifyEpisodeId: "4m1ppPlMCsFPqKZBZKQ4o0",
     xVideoUrl: "https://x.com/Supersonicos_A/status/1857911419066310824",
     title: "Capítulo 32 | Elon Musk acabará con el SLS + Noticias de Starship",
+    subtitle: "Astrofriki",
+    subtitleUrl: "https://x.com/Astrofriki",
     duration: "1:23:59",
     season: "season2",
   },
