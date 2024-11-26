@@ -34,7 +34,7 @@ const getSeasonColor = (season: string) => {
 };
 
 const getThumbnail = (youtubeVideoId: string) => {
-  return `https://img.youtube.com/vi/${youtubeVideoId}/maxresdefault.jpg`;
+  return `https://img.youtube.com/vi_webp/${youtubeVideoId}/maxresdefault.webp`;
 };
 
 const getYoutubeUrl = (youtubeVideoId: string) => {
