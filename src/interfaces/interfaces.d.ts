@@ -1,4 +1,5 @@
 interface Episode {
+  episodeId: string;
   youtubeVideoId: string;
   spotifyEpisodeId: string | null;
   title: string;

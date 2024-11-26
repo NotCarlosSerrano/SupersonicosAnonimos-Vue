@@ -84,7 +84,7 @@ onUnmounted(() => {
       :search="search"
       class="border"
       :style="mobile ? '' : 'border-top-left-radius: 9px;border-top-right-radius: 9px;'"
-      :filter-keys="['title', 'subtitle']"
+      :filter-keys="['title', 'subtitle', 'episodeId']"
     >
       <template #header>
         <v-toolbar

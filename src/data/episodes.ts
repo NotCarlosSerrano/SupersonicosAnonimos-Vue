@@ -2,6 +2,7 @@ import type { Episode } from "@/interfaces/interfaces";
 
 const episodes: Episode[] = [
   {
+    episodeId: "1",
     youtubeVideoId: "Z_sFJ3slwtw",
     spotifyEpisodeId: "4QV3C42b2XIq10bul74mUt",
     title: "Capítulo 1: El del avión secreto del Pentágono",
@@ -9,6 +10,7 @@ const episodes: Episode[] = [
     season: "season1",
   },
   {
+    episodeId: "2",
     youtubeVideoId: "Jvfh1x_swMU",
     spotifyEpisodeId: "1WvXsr1mXcLaRyfhHmp7Z0",
     title: "Capítulo 2: El del accidente de avión en Tokio",
@@ -16,6 +18,7 @@ const episodes: Episode[] = [
     season: "season1",
   },
   {
+    episodeId: "3",
     youtubeVideoId: "nQXIoMZYL6I",
     spotifyEpisodeId: "5El1qkDUMKYZ8XWhdtgtTS",
     title: "Capítulo 3: El de la semana loca aeroespacial",
@@ -23,6 +26,7 @@ const episodes: Episode[] = [
     season: "season1",
   },
   {
+    episodeId: "4",
     youtubeVideoId: "0T00ZwqYROo",
     spotifyEpisodeId: "31baGasmGDzZCncCSzdPSp",
     title: "Capítulo 4: El de responder (o no) a un mensaje extraterrestre",
@@ -32,6 +36,7 @@ const episodes: Episode[] = [
     season: "season1",
   },
   {
+    episodeId: "5",
     youtubeVideoId: "ryHUipXzWgw",
     spotifyEpisodeId: "0JWlbjo8A6f2VdU074N5kP",
     title: "Capitulo 5: El del adiós a Ingenuity y el hola a SLIM",
@@ -39,6 +44,7 @@ const episodes: Episode[] = [
     season: "season1",
   },
   {
+    episodeId: "6",
     youtubeVideoId: "tEOq5ZmWyIU",
     spotifyEpisodeId: "0VFjD4fPj5LzhNaBFrtfbj",
     title: "Capitulo 6: Se calienta la cosa en Starbase",
@@ -46,6 +52,7 @@ const episodes: Episode[] = [
     season: "season1",
   },
   {
+    episodeId: "7",
     youtubeVideoId: "RFrEBZcAx8c",
     spotifyEpisodeId: "46o6ynkWPg5z7ozGA7XRRI",
     title: "Capítulo 7: Starship, Donald Trump y astrofísica",
@@ -55,6 +62,7 @@ const episodes: Episode[] = [
     season: "season1",
   },
   {
+    episodeId: "8",
     youtubeVideoId: "csrMZAsCEq8",
     spotifyEpisodeId: "19tVoa1XmtQmDOggxtPakX",
     title: "Capitulo 8: Los proyectos MÁS LOCOS de la exploración espacial",
@@ -64,6 +72,7 @@ const episodes: Episode[] = [
     season: "season1",
   },
   {
+    episodeId: "9",
     youtubeVideoId: "yQbFgZGb-dA",
     spotifyEpisodeId: "38b2uBuIezH3zBaPE0BkOo",
     title: "Capitulo 9: Starship, vuelos supersónicos y la vuelta a la Luna",
@@ -71,6 +80,7 @@ const episodes: Episode[] = [
     season: "season1",
   },
   {
+    episodeId: "10",
     youtubeVideoId: "bi3wnk2Y2lY",
     spotifyEpisodeId: "4XTWNY8nGG9PhvU1bYoixJ",
     title: "Capitulo 10: Te subirías en el Primer Starship Tripulado?",
@@ -78,6 +88,7 @@ const episodes: Episode[] = [
     season: "season1",
   },
   {
+    episodeId: "11",
     youtubeVideoId: "BBdS1Lw5594",
     spotifyEpisodeId: "6biXe5l5oajB7r6DUuXHIl",
     title: "Capitulo 11: Especial Lanzamiento de Starship IFT-3",
@@ -85,6 +96,7 @@ const episodes: Episode[] = [
     season: "season1",
   },
   {
+    episodeId: "12",
     youtubeVideoId: "fD_shwAgbNs",
     spotifyEpisodeId: "00NDesaKCqvij14AY0ccZa",
     title: "Capitulo 12: ¿Éxito o fracaso de Starship?",
@@ -92,6 +104,7 @@ const episodes: Episode[] = [
     season: "season1",
   },
   {
+    episodeId: "13",
     youtubeVideoId: "Gv7lAuLBteQ",
     spotifyEpisodeId: "73WmAI6Vv8or5RUAxYNmDQ",
     title: "Capítulo 13: Cómo escapar de un cohete Soyuz en llamas",
@@ -99,6 +112,7 @@ const episodes: Episode[] = [
     season: "season1",
   },
   {
+    episodeId: "14",
     youtubeVideoId: "y7Mql3KrzDA",
     spotifyEpisodeId: "3FggKAGkuhMA0Olrbjy5Pj",
     title: "Capítulo 14: La Pólvora Negra y la búsqueda de la inmortalidad",
@@ -106,6 +120,7 @@ const episodes: Episode[] = [
     season: "season1",
   },
   {
+    episodeId: "15",
     youtubeVideoId: "W3E_llroUIY",
     spotifyEpisodeId: "30XlPDvkZvyaz7RUcXbzDQ",
     title: "Capítulo 15: Desmontando Terraplanistas",
@@ -113,6 +128,7 @@ const episodes: Episode[] = [
     season: "season1",
   },
   {
+    episodeId: "16",
     youtubeVideoId: "UAuShXH3FIA",
     title: "Capítulo 16: El Problema de la Voyager 1 y los Misiles de Irán",
     spotifyEpisodeId: "3eSqLNbEdFYfjwoi8snUdW",
@@ -120,6 +136,7 @@ const episodes: Episode[] = [
     season: "season1",
   },
   {
+    episodeId: "17",
     youtubeVideoId: "oJUjim6CkG4",
     spotifyEpisodeId: "3cRj6O8libzCtD9VAORNPQ",
     title: "Capítulo 17: Josep sobrevive a un B-737 Max SIN SABERLO",
@@ -127,6 +144,7 @@ const episodes: Episode[] = [
     season: "season1",
   },
   {
+    episodeId: "18",
     youtubeVideoId: "p_NfDTViF6c",
     spotifyEpisodeId: "0xFPfJwipJts9YvS0qtG7W",
     title: "Capítulo 18: SpaceX presenta sus nuevos trajes y BOEING lo vuelve a hacer",
@@ -134,6 +152,7 @@ const episodes: Episode[] = [
     season: "season1",
   },
   {
+    episodeId: "19",
     youtubeVideoId: "ulvrg1aVn-Y",
     spotifyEpisodeId: "2WIwMfdowjBIudeFoxH8Cy",
     title: "Capítulo 19: Las nuevas mejoras de Starship y las Auroras Boreales",
@@ -141,6 +160,7 @@ const episodes: Episode[] = [
     season: "season1",
   },
   {
+    episodeId: "20",
     youtubeVideoId: "IVGhTgKPGmo",
     spotifyEpisodeId: "3npdmYf4RhGImJ8ntYfqyT",
     title: "Consejos para Estudiantes y Carreras de Ciencias (y no tan ciencias)",
@@ -148,6 +168,7 @@ const episodes: Episode[] = [
     season: "season1",
   },
   {
+    episodeId: "21",
     youtubeVideoId: "e5vksFewaAQ",
     spotifyEpisodeId: "3hcIkhexVesJJd3cFZQ7fJ",
     title: "Capítulo 21: TODO lo que tienes que saber para el 4º Vuelo de Starship",
@@ -155,6 +176,7 @@ const episodes: Episode[] = [
     season: "season1",
   },
   {
+    episodeId: "22",
     youtubeVideoId: "swh61M_Ibxg",
     spotifyEpisodeId: "4L7ViINVlsEo532Twctbsh",
     title: "Capítulo 22: La locura de Starship y las nuevas informaciones de Elon Musk",
@@ -162,6 +184,7 @@ const episodes: Episode[] = [
     season: "season1",
   },
   {
+    episodeId: "23",
     youtubeVideoId: "9QfMmn4aDnI",
     spotifyEpisodeId: null,
     title: "Capítulo 23 / El definitivo",
@@ -169,6 +192,7 @@ const episodes: Episode[] = [
     season: "season1",
   },
   {
+    episodeId: "24",
     youtubeVideoId: "kGns4HEGlms",
     spotifyEpisodeId: "1H8Ie7HExaSb7PIStCZ3Jj",
     title: "Capítulo 24 | HEMOS VUELTO",
@@ -176,6 +200,7 @@ const episodes: Episode[] = [
     season: "season2",
   },
   {
+    episodeId: "25",
     youtubeVideoId: "3QjDWMQehxg",
     spotifyEpisodeId: "0KAmuZqkppMCtF2mAMqymm",
     title: "Capítulo 25 | La casi catástrofe aérea del avión de Josep",
@@ -183,6 +208,7 @@ const episodes: Episode[] = [
     season: "season2",
   },
   {
+    episodeId: "26",
     youtubeVideoId: "noggJKf9Mcc",
     spotifyEpisodeId: "54wDQsNuD750OuSBo5tih4",
     title: "Capítulo 26 | PLD nos cuenta en EXCLUSIVA sus proyectos!",
@@ -190,6 +216,7 @@ const episodes: Episode[] = [
     season: "season2",
   },
   {
+    episodeId: "27",
     youtubeVideoId: "Ls-Om2iJtuc",
     spotifyEpisodeId: "3HuXj8LwDdS87ObGFOOdAM",
     title: "Capítulo 27 | Histórico, Spacex atrapa un cohete gigantesco en el aire",
@@ -197,6 +224,7 @@ const episodes: Episode[] = [
     season: "season2",
   },
   {
+    episodeId: "28",
     youtubeVideoId: "ydmEKfvZD0I",
     spotifyEpisodeId: "5naUvSnQYqNDM3mYsJvnNe",
     title: "Capítulo 28 | La NASA cerca de encontrar vida Extraterrestre",
@@ -204,6 +232,7 @@ const episodes: Episode[] = [
     season: "season2",
   },
   {
+    episodeId: "29",
     youtubeVideoId: "FPOSHUULFHY",
     spotifyEpisodeId: "1WT6YyylKT2xW2iIDTOrRp",
     title: "Capítulo 29 | SpaceX secuestró focas para experimentar con ellas (Confirmado)",
@@ -211,6 +240,7 @@ const episodes: Episode[] = [
     season: "season2",
   },
   {
+    episodeId: "30",
     youtubeVideoId: "CzxeHx6CX8I",
     spotifyEpisodeId: "1MeHJBMrsuCkZuRpQV9ELi",
     xVideoUrl: "https://x.com/Supersonicos_A/status/1853896253438128268",
@@ -219,6 +249,7 @@ const episodes: Episode[] = [
     season: "season2",
   },
   {
+    episodeId: "31",
     youtubeVideoId: "jDV6tKZgx0g",
     spotifyEpisodeId: "3DNEgoqzqsHLZ5CNwvIWIG",
     xVideoUrl: "https://x.com/Supersonicos_A/status/1856419635928723809",
@@ -227,6 +258,7 @@ const episodes: Episode[] = [
     season: "season2",
   },
   {
+    episodeId: "32",
     youtubeVideoId: "09DgU-zmKc4",
     spotifyEpisodeId: "4m1ppPlMCsFPqKZBZKQ4o0",
     xVideoUrl: "https://x.com/Supersonicos_A/status/1857911419066310824",
