@@ -91,13 +91,13 @@ const getLastEpisodes = computed(() => {
             <p v-if="smAndDown && !showMore">
               <!-- eslint-disable vue/no-v-html -->
               <span
-                v-html="description.slice(0, 309) + '...'"
+                v-html="description.slice(0, 309) + '... '"
               />
               <v-btn
                 text="Leer más"
                 variant="text"
                 size="small"
-                class="text-none"
+                class="text-none px-1"
                 @click="showMore = true"
               />
             </p>
