@@ -63,6 +63,7 @@ const isNewEpisode = (releaseDate: Date) => {
   >
     <v-img
       :src="getThumbnail(episode.youtubeVideoId)"
+      alt="Episode thumbnail"
     >
       <template
         #default

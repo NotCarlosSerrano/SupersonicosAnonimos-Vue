@@ -120,6 +120,7 @@ const showMore = ref<boolean>(false);
           max-width="344"
           class="rounded-lg"
           :width="mobile ? 200 : 344"
+          alt="Podcast logo"
         />
       </v-col>
       <v-col
