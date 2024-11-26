@@ -47,7 +47,7 @@ const episodes: Episode[] = [
   },
   {
     youtubeVideoId: "RFrEBZcAx8c",
-    spotifyEpisodeId: "0VFjD4fPj5LzhNaBFrtfbj",
+    spotifyEpisodeId: "46o6ynkWPg5z7ozGA7XRRI",
     title: "Capítulo 7: Starship, Donald Trump y astrofísica",
     subtitle: "Doctor Fisión",
     subtitleUrl: "https://x.com/doctorfision",
