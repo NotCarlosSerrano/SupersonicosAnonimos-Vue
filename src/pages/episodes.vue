@@ -147,9 +147,8 @@ onUnmounted(() => {
         <v-container
           :style="{
             height: `${height}px`,
-            overflow: 'auto',
           }"
-          class="pa-1"
+          class="pa-1 overflow-y-auto"
           fluid
         >
           <v-row
