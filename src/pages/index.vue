@@ -87,8 +87,8 @@ const getLastEpisodes = computed(() => {
             <p
               :class="{
                 'lineClamp': smAndDown && !showMore,
+                'text-cation': smAndDown,
               }"
-              class="text-caption"
             >
               Supersónicos Anónimos es el podcast de divulgación aeroespacial liderado por los creadores de contenido Sergio Hidalgo (<a href="https://x.com/SergioHidalAERO" target="_blank">@SergioHidalgoAero</a>) y Josep Calatayud (<a href="https://x.com/ControlMision" target="_blank">@ControldeMisión</a>), conocidos por sus canales líderes en el sector, se unen para llevar a los oyentes a un viaje a través del cielo y el espacio, hablando de manera clara y amena. En SuperSónicos Anónimos, la complejidad de la tecnología aeroespacial se traduce en historias cautivadoras que cualquiera, desde el apasionado entusiasta hasta el recién llegado, puede disfrutar y maravillarse.
             </p>
