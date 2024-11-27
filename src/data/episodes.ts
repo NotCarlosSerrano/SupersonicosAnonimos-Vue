@@ -268,6 +268,16 @@ const episodes: Episode[] = [
     duration: "1:23:59",
     season: "season2",
   },
+  {
+    episodeId: "33",
+    youtubeVideoId: "WJjt8EkZmV0",
+    spotifyEpisodeId: null,
+    xVideoUrl: undefined,
+    title: "Capítulo 33 | El problemón de SpaceX con la Starship chamuscada",
+    duration: "1:07:17",
+    season: "season2",
+    releaseDate: new Date("2024-11-27"),
+  },
 ]
 
 export default episodes;
