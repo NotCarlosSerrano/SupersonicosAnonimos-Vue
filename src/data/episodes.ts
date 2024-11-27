@@ -271,7 +271,7 @@ const episodes: Episode[] = [
   {
     episodeId: "33",
     youtubeVideoId: "WJjt8EkZmV0",
-    spotifyEpisodeId: null,
+    spotifyEpisodeId: "1ibr2pRFd5R1DsaFkRTZpR",
     xVideoUrl: undefined,
     title: "Capítulo 33 | El problemón de SpaceX con la Starship chamuscada",
     duration: "1:07:17",
