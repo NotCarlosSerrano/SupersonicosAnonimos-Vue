@@ -25,10 +25,6 @@ const title = ref<string>('Supersónicos Anónimos');
 
 const subtitle = ref<string>('By NotCarlosSerrano');
 
-const description = ref<string>(
-  'SuperSónicos Anónimos es el podcast de divulgación aeroespacial liderado por los creadores de contenido Sergio Hidalgo (<a href="https://x.com/SergioHidalAERO" target="_blank">@SergioHidalgoAero</a>) y Josep Calatayud (<a href="https://x.com/ControlMision" target="_blank">@ControldeMisión</a>), conocidos por sus canales líderes en el sector, se unen para llevar a los oyentes a un viaje a través del cielo y el espacio, hablando de manera clara y amena. En SuperSónicos Anónimos, la complejidad de la tecnología aeroespacial se traduce en historias cautivadoras que cualquiera, desde el apasionado entusiasta hasta el recién llegado, puede disfrutar y maravillarse.'
-);
-
 const socialsLinks = ref<Social[]>([...socials]);
 
 const getLastEpisodes = computed(() => {
@@ -88,29 +84,22 @@ const getLastEpisodes = computed(() => {
           </v-card-subtitle>
 
           <v-card-text>
-            <p v-if="smAndDown && !showMore">
-              <!-- eslint-disable vue/no-v-html -->
-              <span
-                v-html="description.slice(0, 309) + '... '"
-              />
-              <v-btn
-                text="Leer más"
-                variant="text"
-                size="small"
-                class="text-none px-1"
-                @click="showMore = true"
-              />
+            <p
+              :class="{
+                'lineClamp': smAndDown && !showMore,
+              }"
+              class="text-caption"
+            >
+              Supersónicos Anónimos es el podcast de divulgación aeroespacial liderado por los creadores de contenido Sergio Hidalgo (<a href="https://x.com/SergioHidalAERO" target="_blank">@SergioHidalgoAero</a>) y Josep Calatayud (<a href="https://x.com/ControlMision" target="_blank">@ControldeMisión</a>), conocidos por sus canales líderes en el sector, se unen para llevar a los oyentes a un viaje a través del cielo y el espacio, hablando de manera clara y amena. En SuperSónicos Anónimos, la complejidad de la tecnología aeroespacial se traduce en historias cautivadoras que cualquiera, desde el apasionado entusiasta hasta el recién llegado, puede disfrutar y maravillarse.
             </p>
-            <p v-else-if="smAndDown && showMore">
-              <span
-                v-html="description"
-              />
-            </p>
-            <p v-else>
-              <span
-                v-html="description"
-              />
-            </p>
+            <v-btn
+              v-if="smAndDown && !showMore"
+              text="Leer más"
+              variant="text"
+              size="small"
+              class="text-none px-1"
+              @click="showMore = true"
+            />
           </v-card-text>
           
           <v-divider />
@@ -176,3 +165,13 @@ const getLastEpisodes = computed(() => {
     </v-row>
   </v-container>
 </template>
+
+<style scoped>
+.lineClamp {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+}
+</style>
