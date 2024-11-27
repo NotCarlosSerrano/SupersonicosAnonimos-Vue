@@ -39,129 +39,134 @@ const getLastEpisodes = computed(() => {
 </script>
 
 <template>
-  <v-container>
-    <v-row
-      justify-lg="center"
-    >
-      <v-col
-        cols="12"
-        sm="12"
-        lg="4"
-        xl="3"
-        align="center"
+  <v-container
+    height="100%"
+    class="d-flex align-center"
+  >
+    <div>
+      <v-row
+        justify-lg="center"
       >
-        <v-img
-          src="/src/assets/logo.jpg"
-          max-width="344"
-          class="rounded-lg"
-          :width="mobile ? 200 : 344"
-          alt="Podcast logo"
-        />
-      </v-col>
-      <v-col
-        :class="mobile ? 'pt-0' : undefined"
-        cols="12"
-        sm="12"
-        lg="6"
-        xl="4"
-      >
-        <v-card
-          height="100%"
-          class="d-flex flex-column justify-space-between"
-          elevation="0"
+        <v-col
+          cols="12"
+          sm="12"
+          lg="4"
+          xl="3"
+          align="center"
         >
-          <v-card-title
-            :class="{
-              'text-h5': mobile,
-              'text-h4': !mobile,
-            }"
+          <v-img
+            src="/src/assets/logo.jpg"
+            max-width="344"
+            class="rounded-lg"
+            :width="mobile ? 200 : 344"
+            alt="Podcast logo"
+          />
+        </v-col>
+        <v-col
+          :class="mobile ? 'pt-0' : undefined"
+          cols="12"
+          sm="12"
+          lg="6"
+          xl="4"
+        >
+          <v-card
+            height="100%"
+            class="d-flex flex-column justify-space-between"
+            elevation="0"
           >
-            {{ title }}
-          </v-card-title>
-
-          <v-card-subtitle>
-            {{ subtitle }}
-          </v-card-subtitle>
-
-          <v-card-text>
-            <p
+            <v-card-title
               :class="{
-                'lineClamp': smAndDown && !showMore,
+                'text-h5': mobile,
+                'text-h4': !mobile,
               }"
             >
-              Supersónicos Anónimos es el podcast de divulgación aeroespacial liderado por los creadores de contenido Sergio Hidalgo (<a href="https://x.com/SergioHidalAERO" target="_blank">@SergioHidalgoAero</a>) y Josep Calatayud (<a href="https://x.com/ControlMision" target="_blank">@ControldeMisión</a>), conocidos por sus canales líderes en el sector, se unen para llevar a los oyentes a un viaje a través del cielo y el espacio, hablando de manera clara y amena. En SuperSónicos Anónimos, la complejidad de la tecnología aeroespacial se traduce en historias cautivadoras que cualquiera, desde el apasionado entusiasta hasta el recién llegado, puede disfrutar y maravillarse.
-            </p>
-            <v-btn
-              v-if="smAndDown && !showMore"
-              text="Leer más"
-              variant="text"
-              size="small"
-              class="text-none px-1"
-              @click="showMore = true"
-            />
-          </v-card-text>
-          
-          <v-divider />
-          <v-card-actions>
-            <v-spacer />
-            <SocialButton
-              v-for="(social, index) in socialsLinks"
-              :key="index"
-              :icon="social.icon"
-              :social-url="social.url"
-            />
-            <v-spacer />
-          </v-card-actions>
-        </v-card>
-      </v-col>
-    </v-row>
-    <v-row
-      justify="center"
-    >
-      <v-col
-        :class="mobile ? 'pt-0' : undefined"
-        cols="12"
-        lg="10"
-        xl="8"
-      >
-        <v-card
-          elevation="0"
-        >
-          <v-card-title>
-            {{ xs ? 'Último episodio' : 'Últimos episodios' }}
-          </v-card-title>
-          <v-card-text
-            class="py-0"
-          >
-            <v-row dense>
-              <v-col
-                v-for="(episode, index) in getLastEpisodes"
-                :key="index"
-                cols="12"
-                sm="6"
-                md="4"
-                lg="4"
-                xl="4"
+              {{ title }}
+            </v-card-title>
+
+            <v-card-subtitle>
+              {{ subtitle }}
+            </v-card-subtitle>
+
+            <v-card-text>
+              <p
+                :class="{
+                  'lineClamp': smAndDown && !showMore,
+                }"
               >
-                <EpisodeCard
-                  :episode="episode"
-                  :selected-season="selectedSeason"
-                  :seasons="availableSeasons"
-                />
-              </v-col>
-            </v-row>
-          </v-card-text>
-          <v-card-actions>
-            <v-spacer />
-            <v-btn
-              text="Ver todos los episodios"
-              href="/#/episodes"
-              append-icon="mdi-arrow-right"
-            />
-          </v-card-actions>
-        </v-card>
-      </v-col>
-    </v-row>
+                Supersónicos Anónimos es el podcast de divulgación aeroespacial liderado por los creadores de contenido Sergio Hidalgo (<a href="https://x.com/SergioHidalAERO" target="_blank">@SergioHidalgoAero</a>) y Josep Calatayud (<a href="https://x.com/ControlMision" target="_blank">@ControldeMisión</a>), conocidos por sus canales líderes en el sector, se unen para llevar a los oyentes a un viaje a través del cielo y el espacio, hablando de manera clara y amena. En SuperSónicos Anónimos, la complejidad de la tecnología aeroespacial se traduce en historias cautivadoras que cualquiera, desde el apasionado entusiasta hasta el recién llegado, puede disfrutar y maravillarse.
+              </p>
+              <v-btn
+                v-if="smAndDown && !showMore"
+                text="Leer más"
+                variant="text"
+                size="small"
+                class="text-none px-1"
+                @click="showMore = true"
+              />
+            </v-card-text>
+            
+            <v-divider />
+            <v-card-actions>
+              <v-spacer />
+              <SocialButton
+                v-for="(social, index) in socialsLinks"
+                :key="index"
+                :icon="social.icon"
+                :social-url="social.url"
+              />
+              <v-spacer />
+            </v-card-actions>
+          </v-card>
+        </v-col>
+      </v-row>
+      <v-row
+        justify="center"
+      >
+        <v-col
+          :class="mobile ? 'pt-0' : undefined"
+          cols="12"
+          lg="10"
+          xl="8"
+        >
+          <v-card
+            elevation="0"
+          >
+            <v-card-title>
+              {{ xs ? 'Último episodio' : 'Últimos episodios' }}
+            </v-card-title>
+            <v-card-text
+              class="py-0"
+            >
+              <v-row dense>
+                <v-col
+                  v-for="(episode, index) in getLastEpisodes"
+                  :key="index"
+                  cols="12"
+                  sm="6"
+                  md="4"
+                  lg="4"
+                  xl="4"
+                >
+                  <EpisodeCard
+                    :episode="episode"
+                    :selected-season="selectedSeason"
+                    :seasons="availableSeasons"
+                  />
+                </v-col>
+              </v-row>
+            </v-card-text>
+            <v-card-actions>
+              <v-spacer />
+              <v-btn
+                text="Ver todos los episodios"
+                href="/#/episodes"
+                append-icon="mdi-arrow-right"
+              />
+            </v-card-actions>
+          </v-card>
+        </v-col>
+      </v-row>
+    </div>
   </v-container>
 </template>
 
