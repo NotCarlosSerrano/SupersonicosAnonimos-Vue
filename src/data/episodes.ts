@@ -272,7 +272,7 @@ const episodes: Episode[] = [
     episodeId: "33",
     youtubeVideoId: "WJjt8EkZmV0",
     spotifyEpisodeId: "1ibr2pRFd5R1DsaFkRTZpR",
-    xVideoUrl: "https://x.com/Supersonicos_A/status/1861862716412952698",
+    xVideoUrl: "https://x.com/Supersonicos_A/status/1861864828127875093",
     title: "Capítulo 33 | El problemón de SpaceX con la Starship chamuscada",
     duration: "1:07:17",
     season: "season2",
