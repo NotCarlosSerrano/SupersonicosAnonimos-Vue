@@ -75,6 +75,9 @@ importers:
       vite:
         specifier: ^5.4.11
         version: 5.4.11(@types/node@22.10.0)(sass-embedded@1.81.0)(sass@1.81.0)
+      vite-plugin-sitemap:
+        specifier: ^0.7.1
+        version: 0.7.1
       vite-plugin-vuetify:
         specifier: ^2.0.4
         version: 2.0.4(vite@5.4.11(@types/node@22.10.0)(sass-embedded@1.81.0)(sass@1.81.0))(vue@3.5.13(typescript@5.6.3))(vuetify@3.7.4)
@@ -1441,6 +1444,9 @@ packages:
 
   varint@6.0.0:
     resolution: {integrity: sha512-cXEIW6cfr15lFv563k4GuVuW/fiwjknytD37jIOLSdSWuOI6WnO/oKwmP2FQTU2l01LP8/M5TSAJpzUaGe3uWg==}
+
+  vite-plugin-sitemap@0.7.1:
+    resolution: {integrity: sha512-4NRTkiWytLuAmcikckrLcLl9iYA20+5v6l8XshcOrzxH1WR8H0O3S6sTQYfjMrE8su/LG6Y0cTodvOdcOIxaLw==}
 
   vite-plugin-vuetify@2.0.4:
     resolution: {integrity: sha512-A4cliYUoP/u4AWSRVRvAPKgpgR987Pss7LpFa7s1GvOe8WjgDq92Rt3eVXrvgxGCWvZsPKziVqfHHdCMqeDhfw==}
@@ -2813,6 +2819,8 @@ snapshots:
   util-deprecate@1.0.2: {}
 
   varint@6.0.0: {}
+
+  vite-plugin-sitemap@0.7.1: {}
 
   vite-plugin-vuetify@2.0.4(vite@5.4.11(@types/node@22.10.0)(sass-embedded@1.81.0)(sass@1.81.0))(vue@3.5.13(typescript@5.6.3))(vuetify@3.7.4):
     dependencies:
