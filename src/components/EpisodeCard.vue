@@ -62,6 +62,7 @@ const isNewEpisode = (releaseDate: Date) => {
     flat
   >
     <v-img
+      aspect-ratio="1.78"
       :src="getThumbnail(episode.youtubeVideoId)"
       alt="Episode thumbnail"
     >
