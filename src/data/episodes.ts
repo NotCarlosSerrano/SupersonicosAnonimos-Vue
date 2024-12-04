@@ -280,7 +280,7 @@ const episodes: Episode[] = [
   },
   {
     episodeId: "34",
-    youtubeVideoId: "CnL-4kvCg8g",
+    youtubeVideoId: "RxURg94ut6E",
     spotifyEpisodeId: "2ZMwFrHenkNIeDHFKFKZ91",
     xVideoUrl: undefined,
     title: "Capítulo 34 | Los problemas de Starship no son tan graves como parecían",
