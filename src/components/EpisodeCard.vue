@@ -34,6 +34,9 @@ const getSeasonColor = (season: string) => {
 };
 
 const getThumbnail = (youtubeVideoId: string) => {
+  if (!youtubeVideoId) {
+    return '-';
+  }
   return `https://img.youtube.com/vi_webp/${youtubeVideoId}/maxresdefault.webp`;
 };
 
@@ -82,6 +85,13 @@ const isNewEpisode = (releaseDate: Date) => {
           color="orange-darken-2"
           variant="flat"
           text="¡Nuevo episodio!"
+        />
+      </template>
+
+      <template #error>
+        <v-empty-state
+          icon="mdi-image-broken"
+          text="No se ha podido cargar la imagen"
         />
       </template>
     </v-img>
