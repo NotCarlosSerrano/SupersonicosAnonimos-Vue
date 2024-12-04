@@ -90,6 +90,7 @@ const isNewEpisode = (releaseDate: Date) => {
 
       <template #error>
         <v-empty-state
+          class="mt-n2"
           icon="mdi-image-broken"
           text="No se ha podido cargar la imagen"
         />
