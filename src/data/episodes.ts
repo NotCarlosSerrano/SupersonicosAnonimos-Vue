@@ -278,6 +278,16 @@ const episodes: Episode[] = [
     season: "season2",
     releaseDate: new Date("2024-11-27"),
   },
+  {
+    episodeId: "34",
+    youtubeVideoId: "",
+    spotifyEpisodeId: "2ZMwFrHenkNIeDHFKFKZ91",
+    xVideoUrl: undefined,
+    title: "Capítulo 34 | Los problemas de Starship no son tan graves como parecían",
+    duration: "1:07:24",
+    season: "season2",
+    releaseDate: new Date("2024-12-04"),
+  }
 ]
 
 export default episodes;
