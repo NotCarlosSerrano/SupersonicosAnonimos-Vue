@@ -282,7 +282,7 @@ const episodes: Episode[] = [
     episodeId: "34",
     youtubeVideoId: "RxURg94ut6E",
     spotifyEpisodeId: "2ZMwFrHenkNIeDHFKFKZ91",
-    xVideoUrl: undefined,
+    xVideoUrl: "https://x.com/Supersonicos_A/status/1864413619871473916",
     title: "Capítulo 34 | Los problemas de Starship no son tan graves como parecían",
     duration: "1:07:24",
     season: "season2",
