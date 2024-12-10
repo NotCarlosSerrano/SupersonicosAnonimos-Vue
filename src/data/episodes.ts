@@ -287,6 +287,15 @@ const episodes: Episode[] = [
     duration: "1:07:24",
     season: "season2",
     releaseDate: new Date("2024-12-04"),
+  },
+  {
+    episodeId: "35",
+    youtubeVideoId: "vlDtC2oSObU",
+    spotifyEpisodeId: "23wjB36qGHTVWa0iclx2OF",
+    title: "Capítulo 35 | Elon Musk pone a su amigo a dirigir la NASA",
+    duration: "1:06:43",
+    season: "season2",
+    releaseDate: new Date("2024-12-10"),
   }
 ]
 
