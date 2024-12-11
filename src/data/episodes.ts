@@ -292,6 +292,7 @@ const episodes: Episode[] = [
     episodeId: "35",
     youtubeVideoId: "vlDtC2oSObU",
     spotifyEpisodeId: "23wjB36qGHTVWa0iclx2OF",
+    xVideoUrl: "https://x.com/Supersonicos_A/status/1866615859336319237",
     title: "Capítulo 35 | Elon Musk pone a su amigo a dirigir la NASA",
     duration: "1:06:43",
     season: "season2",
