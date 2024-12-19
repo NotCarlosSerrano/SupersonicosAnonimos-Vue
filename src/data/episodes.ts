@@ -297,7 +297,17 @@ const episodes: Episode[] = [
     duration: "1:06:43",
     season: "season2",
     releaseDate: new Date("2024-12-10"),
-  }
+  },
+  {
+    episodeId: "36",
+    youtubeVideoId: "Dzy72OA8428",
+    spotifyEpisodeId: "76NUU3guvpmVDpOXD8NwPL",
+    xVideoUrl: "https://x.com/Supersonicos_A/status/1869479459923149307",
+    title: "Episodio 36 | El Peregrinaje Aeroespacial ya es oficial",
+    duration: "1:01:18",
+    season: "season2",
+    releaseDate: new Date("2024-12-18"),
+  },
 ]
 
 export default episodes;
